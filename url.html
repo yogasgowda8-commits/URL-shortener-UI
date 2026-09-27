@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URL Shortener</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>URL Shortener</h1>
+    <p class="tagline">Validate URLs, create short-code entries and manage history.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <form id="url-form">
+        <label for="url-input">Long URL</label>
+        <input type="text" id="url-input" placeholder="https://example.com/very/long/link" autocomplete="off">
+        <button type="submit" id="shorten-btn">Shorten URL</button>
+        <p id="error-message" class="error-message"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="history-header">
+        <h2>History</h2>
+        <input type="text" id="search-input" placeholder="Search history...">
+      </div>
+      <ul id="history-list" class="history-list"></ul>
+      <p id="empty-state" class="empty-state">No shortened URLs yet.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
