@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener UI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>URL Shortener</h1>
+    <p>Validate URLs, create short-code entries and manage history.</p>
+  </header>
+
+  <main>
+    <section class="card" aria-labelledby="create-heading">
+      <h2 id="create-heading">Create Short URL</h2>
+      <form id="url-form" novalidate>
+        <div class="field">
+          <label for="url-input">Long URL</label>
+          <input type="text" id="url-input" placeholder="https://example.com/very/long/link" autocomplete="off">
+        </div>
+        <div class="actions">
+          <button type="button" id="validate-btn" class="btn secondary">Validate</button>
+          <button type="submit" id="shorten-btn" class="btn primary">Shorten URL</button>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="history-heading">
+      <h2 id="history-heading">History</h2>
+      <div class="toolbar">
+        <div class="field">
+          <label for="search-input">Search</label>
+          <input type="search" id="search-input" placeholder="Search by URL or code">
+        </div>
+        <div class="field">
+          <label for="sort-select">Sort by</label>
+          <select id="sort-select">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </div>
+      </div>
+      <p id="count" class="count"></p>
+      <ul id="history-list" class="history-list"></ul>
+      <p id="empty-state" class="empty-state">No shortened URLs yet.</p>
+    </section>
+  </main>
+
+  <script src="url.js"></script>
+</body>
+</html>
